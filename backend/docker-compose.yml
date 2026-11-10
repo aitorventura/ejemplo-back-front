@@ -1,0 +1,18 @@
+# Solo levanta la base de datos. El backend se arranca aparte (./mvnw spring-boot:run).
+# Usa el puerto 5433 en tu máquina para no chocar con el PostgreSQL de GameVault (5432).
+name: ejemplo-videojuegos
+
+services:
+  postgres:
+    image: postgres:18-alpine
+    environment:
+      POSTGRES_DB: videojuegos_db
+      POSTGRES_USER: videojuegos_user
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:

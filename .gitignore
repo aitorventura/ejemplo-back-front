@@ -1,0 +1,9 @@
+# IDE y sistema
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Ficheros temporales de Word
+~$*.docx

@@ -1,0 +1,14 @@
+# Los wrappers de Maven y Gradle se ejecutan con sh en Linux, Mac y el devcontainer:
+# necesitan saltos de línea LF aunque se clonen en Windows.
+mvnw     text eol=lf
+gradlew  text eol=lf
+*.sh     text eol=lf
+
+# Sus versiones para Windows, al revés
+*.cmd    text eol=crlf
+*.bat    text eol=crlf
+
+# Binarios
+*.jar    binary
+*.docx   binary
+*.webp   binary

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Sin este permiso la app no puede hacer ninguna petición de red -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+        usesCleartextTraffic="true": permite HTTP sin cifrar (http://, no https://).
+        Android lo bloquea por defecto; aquí hace falta porque el backend local no tiene HTTPS.
+        En una app real (servidor con HTTPS) esta línea sobra.
+    -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="Videojuegos"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
